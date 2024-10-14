@@ -1,35 +1,35 @@
 import{ Schema, model } from "mongoose"
 
-const veiculoSchema = new Schema({
-placa: {
+const vehicleSchema = new Schema({
+plate: {
     type: String,
     required: true,
     unique: true,
     maxLength: 7,
     minLength: 7
 },
-nome: {
-    type: String,
+maintenances: {
+    type: Schema.Types.ObjectId,
+    ref: "Maintence",
     required: true
 },
-cor: {
-    type: String,
-    enum: ["Vermelho", "Preto", "Branco"],
+year: {
+    type: Number,
     required: true,
 },
-categoria: {
+model: {
     type: String,
     enum: ["Carro", "Moto", "Onibus", "Van", "Caminhão"],
     required:true
 },
-cliente: {
-    type: Schema.Types.ObjectId,
-    ref: "Cliente",
+owner: {
+    type: String,
+    ref: "Vehicle",
     required: true
 }
 
 })
 
-const Veiculo = model("Veiculo", veiculoSchema)
+const Vehicle = model("Vehicle", vehicleSchema)
 
-export default Veiculo;
+export default Vehicle;

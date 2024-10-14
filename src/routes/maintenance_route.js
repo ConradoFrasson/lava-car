@@ -5,7 +5,7 @@ import {
     show,
     store,
     update,
-}from "../controllers/veiculo_controller.js";
+}from "../controllers/maintenance_controller.js";
 
 const router = Router();
 

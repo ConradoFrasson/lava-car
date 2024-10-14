@@ -1,7 +1,3 @@
-/*
-Definir os serviços que sua aplicação terá
-*/
-
 import {Router} from "express"
 import {
     destroy,
@@ -9,7 +5,7 @@ import {
     show,
     store,
     update,
-}from "../controllers/cliente_controller.js";
+}from "../controllers/workshop_controller.js";
 
 const router = Router();
 

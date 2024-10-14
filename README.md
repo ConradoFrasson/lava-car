@@ -1,5 +1,5 @@
 # lava-car
-Lave seu carro com nosso software gratuito e muito bom
+Cuide do seu carro com nosso software gratuito e muito bom
 
 Inicializando o projeto
 

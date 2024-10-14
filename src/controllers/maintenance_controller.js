@@ -1,12 +1,8 @@
-/*
-Definir a implementação de um serviço definido na rota
-*/
-
-import Cliente from "../models/cliente_model.js"
+import Maintenance from "../models/Maintenance_model.js"
 
 export const store = async (req, res) => {
     try {
-        const content = await Cliente.create(req.body)
+        const content = await Maintenance.create(req.body)
         req.json(content)
         res.status(201)
     } catch (error) {
@@ -16,7 +12,7 @@ export const store = async (req, res) => {
 
 export const index = async (req, res) => {
     try {
-        const content = await Cliente.create(req.body)
+        const content = await Maintenance.find(req.query).exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -25,7 +21,7 @@ export const index = async (req, res) => {
 
 export const show = async (req, res) => {
     try {
-        const content = await Cliente.create(req.body)
+        const content = await Maintenance.findById(req.params.id).exec()
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)
@@ -34,7 +30,16 @@ export const show = async (req, res) => {
 
 export const update = async (req, res) => {
     try {
-        const content = await Cliente.findByIdAndUpdate(req.params,req.body)
+        const content = await Maintenance.findByIdAndUpdate(req.params, req.body)
+        res.json(content)
+    } catch (error) {
+        res.status(400).send(error.message)
+    }
+}
+
+export const destroy = async (req, res) => {
+    try {
+        const content = await Maintenance.findByIdAndDelete(req.params.id).exec();
         res.json(content)
     } catch (error) {
         res.status(400).send(error.message)

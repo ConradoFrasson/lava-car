@@ -1,7 +1,7 @@
 {
   "name": "lava-car",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cuide do seu carro com nosso software gratuito e muito bom",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
